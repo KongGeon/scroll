@@ -1,0 +1,323 @@
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');} body, h1, h2, h3, h4, h5, h6, input, textarea, select { font-family: 'Noto Sans KR', sans-serif; }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+  }
+  
+  body {
+    
+  }
+
+  /* nav */
+.nav {
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(92, 92, 92, 0.72);
+  border-bottom: 1px solid rgb(219, 219, 219);
+  height: 5.2rem;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  display: flex;
+  align-items: center;
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .container div {
+  display: flex;
+}
+.nav h1 {
+  /* font-weight: 800; */
+  color: #fff;
+
+}
+.nav div h2 {
+  font-weight: 300;
+  color: #fff;
+  margin: 1rem;
+}
+
+  .titlename {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    color: #fff;
+  }
+  .container {
+      width: 120rem;
+      margin: 1.5rem;
+      margin: auto;
+  }
+  .s0 {
+    position: absolute;
+    top: 80vh;
+  }
+  .myimg {
+    z-index: -99;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+    
+  }
+
+/* s2 */
+  .s2 {
+    position: relative;
+    }
+  .myimg2 {
+    z-index: -99;
+    width: 100%;
+    height: 100vh;
+    border-radius: 5rem;
+    box-shadow: 2rem 2rem 4rem rgba(0, 0, 0, 0.1);
+    
+  }
+.absolute {
+  position: absolute;
+}
+
+
+
+
+
+/* .text1.visible {
+		opacity: 1;
+		transform: translateY(0);
+	
+	} */
+
+ .fixed {
+position: fixed;
+left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+ }
+ .text2 {
+  text-align: center;
+  font-size: 5.4rem;
+  opacity: 0;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+span {
+  font-weight: 400;
+  font-size: 2.6rem;
+  text-align: center;
+  letter-spacing: 10px;
+}
+.pt20{
+  padding-top: 20vh
+}
+h4 {
+  font-size: 2.4rem;
+  font-weight: 200;
+  width: 70rem
+}
+
+/* svg */
+.svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.word {
+  stroke: #000;
+  stroke-width: 1px
+}
+
+
+
+/* s3 */
+
+.s3_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.s3_box .myimg3 {
+  width: 49%;
+  height: 35rem;
+  border-radius: 2rem;
+  opacity: 0;
+  box-shadow: 2rem 2rem 4rem rgba(0, 0, 0, 0.1);
+
+}
+
+.s3_box1 .myimg3 {
+  background: url(3/1.jpg) no-repeat center center;
+}
+.s3_box2 .myimg3 {
+  background: url(3/2.jpg) no-repeat center center;
+}
+.s3_box3 .myimg3 {
+  background: url(3/3.jpg) no-repeat center center;
+}
+.s3_box4 .myimg3 {
+
+}
+.s3_box .myimg3 {
+  background-size: cover;
+  
+}
+.s3_box .text3 {
+ width: 49%;
+ opacity: 0;
+}
+.s3_box .text3 h1{
+  padding-bottom: 2rem;
+font-size: 3.2rem;
+}
+.s3_box .text3 h2{
+font-size: 1.6rem;
+font-weight: 300;
+}
+
+
+
+
+
+body,
+html {
+    height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 1000;
+}
+
+.section {
+  height: 100%;
+  width: 100%;
+  float: left;
+  position: relative;
+  background: url(4/5.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.sections {
+  width: 280%;
+  height: 100%;
+}
+
+.section__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  font-size: 30px;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.section h1 {
+  font-size: 7rem;
+  width: 90%;
+  line-height: 1;
+}
+.section h1 span {
+  padding: 0 10rem;
+}
+.btn {
+  display: block;
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background: none;
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+
+
+/* 여백 및 설정 */
+.spacer100 {
+  height: 100rem
+  
+}
+.spacer80 {
+height: 80rem;
+}
+.spacer40 {
+    height: 40rem
+}
+.spacer30 {
+  height: 30rem
+}
+.spacer20 {
+  height: 20rem
+}
+.spacer10 {
+  height: 10rem
+}
+
+.text1 {
+  font-size: 5.4rem;
+  text-align: center;
+  opacity: 0;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+.w7 {
+  font-weight: 700;
+}
+.w5 {
+  font-weight: 500;
+}
+.w3 {
+  font-weight: 300;
+}
+.w1 {
+  font-weight: 100;
+}
+.black {
+    color: black;
+}
+.white {
+    color: white;
+}
