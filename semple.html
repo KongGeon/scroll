@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+    height: 100vh;
+  }
+  
+  body {
+    height: 500vh;
+    background: #000;
+  }
+  .myimg {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    
+  }
+  .s0 {
+      position: absolute;
+      top: 50vh;
+  }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="spacer s0" id="trigger"></div>
+    
+        <img class="myimg" src="1/m0000.png" />
+       
+    
+    <div class="spacer s2"></div>
+    
+    <!-- 스크롤매직 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    
+    <!-- 제이쿼리 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+
+
+        // 컨트롤러 정의
+        var controller = new ScrollMagic.Controller();
+            
+        
+        // 이미지 정의
+        var images = [];
+        
+
+        (function(){
+            const frameCount = 99;
+            const currentFrame = index => (
+            `1/m${index.toString().padStart(4, '0')}.png`
+            )
+            for (let i = 1; i < frameCount; i++) {
+            images.push(currentFrame(i));
+            }
+        }());
+        
+        (function() { console.log("!!"); }());
+
+
+        // TweenMax는 모든 객체의 속성을 트위닝 할 수 있습니다. 이 객체를 사용하여 배열을 순환합니다. 
+        var obj = {curImg: 0};
+    
+        // 트윈 생성 
+        var tween = TweenMax.to(obj, 0.5,
+            {
+                curImg: images.length - 1,	// 이미지 수에 curImg 속성 애니메이션 
+                roundProps: "curImg",				// 배열 인덱스로 사용할 수 있도록 정수만 
+                repeat: 0,									// 0 회 반복
+                immediateRender: true,			// 첫 번째 이미지 자동로드 
+                ease: Linear.easeNone,			// 모든 이미지에 동일한 시간 표시 
+                onUpdate: function () {
+                  $(".myimg").attr("src", images[obj.curImg]); // 이미지 소스 설정
+                }
+            }
+        );
+    
+        
+        // 컨트롤러 초기화 
+        var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 3000})
+                        .setTween(tween)
+                        .addIndicators({
+                            name: "1"
+                        }) // 인디케이터 추가 (플러그인 필요)
+                        .addTo(controller);
+    
+        // 양식 변경 처리 
+        $("form.move input[name=duration]:radio").change(function () {
+            scene.duration($(this).val());
+        });
+    
+    </script>
+</body>
+</html>
+
+

@@ -1,3 +1,49 @@
+// 음악재생
+let audio = new Audio('sound.mp3');
+
+    /*종료되면 처음부터 다시 재생*/
+    audio.addEventListener('ended', function() { 
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    
+
+    let fas = document.querySelector('.fas')
+    let play = document.querySelector('.fa-play')
+    let pause = document.querySelector('.fa-pause');
+    
+    fas.addEventListener('click', ()=> {
+      fas.classList.toggle('fa-play')
+      fas.classList.toggle('fa-pause')
+      if(fas.classList.contains('fa-pause')){ //플레이 버튼을 눌렀으면
+        audio.play();
+      } else { //일시정지 버튼을 눌렀으면
+        audio.pause();
+      }
+
+});
+
+
+
+
+// 휠이벤트
+
+ function wheel(){
+   window.onmousewheel = (e) => {
+     if(e.wheelDelta > 0){
+      //  console.log('up');
+       document.querySelector('.nav').classList.remove('blind');
+     }
+     else {
+      //  console.log('down');
+       document.querySelector('.nav').classList.add('blind');
+       
+     }
+   }
+ }
+ wheel();
+
+
 
 
         // 컨트롤러 정의
@@ -275,7 +321,7 @@
             triggerElement: text2[i], //각 요소가 트리거가 됨
             offset: 0,
             duration: 150,
-            triggerHook: 0.26
+            triggerHook: 0.275
           })
         .setTween(tween1)  
         .addTo(controller)
@@ -286,7 +332,7 @@
             triggerElement: text2[i], //각 요소가 트리거가 됨
             offset: 150,
             duration: 300,
-            triggerHook: 0.26
+            triggerHook: 0.275
           })
           .setTween(tween2) 
           .addTo(controller)
@@ -297,7 +343,7 @@
             triggerElement: text2[i], //각 요소가 트리거가 됨
             offset: 450,
             duration: 150,
-            triggerHook: 0.26
+            triggerHook: 0.275
           })
           .setTween(tween3)  
           .addTo(controller)

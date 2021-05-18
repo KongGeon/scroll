@@ -29,6 +29,10 @@ html {
   backdrop-filter: saturate(180%) blur(10px);
   display: flex;
   align-items: center;
+  transition: all 0.3s;
+}
+.blind {
+  transform: translateY(-110%);
 }
 .nav .container {
   display: flex;
@@ -37,17 +41,31 @@ html {
 }
 .nav .container div {
   display: flex;
+  align-items: center;
 }
 .nav h1 {
   /* font-weight: 800; */
   color: #fff;
+  cursor: pointer;
 
 }
 .nav div h2 {
   font-weight: 300;
   color: #fff;
   margin: 1rem;
+  cursor: pointer;
 }
+.nav i {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 1rem;
+ 
+  
+}
+.fa-play, .fa-pause {
+  cursor: pointer;
+}
+
 
   .titlename {
     position: absolute;
